@@ -25,7 +25,7 @@ module.exports.run = async ({ api, event, args }) => {
  for (let i = 0; i < repeatCount; i++) {
  try {
  await api.sendMessage({
- body: `${mentionName}\n\nচিপা থেকে বের হও🐸🔪`,
+ body: `${mentionName}\n\nচোখে দেখতে পারো না তোমাকে এতো করে মেনসন করতেছি🐸🔪 তাড়াতাড়ি সিন দাও🤨🔪`,
  mentions: [{ tag: mentionName, id: mentionID }]
  }, threadID);
  
