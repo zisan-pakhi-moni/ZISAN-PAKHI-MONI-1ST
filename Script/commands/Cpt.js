@@ -28,8 +28,8 @@ module.exports.run = async function({ api, event, args, client, Users, Threads, 
 
   // list of candidate image URLs observed
   const imageUrls = [
-    "https://i.imgur.com/rPl0O7k.mp4",
-    "https://imgur.com/rPl0O7k.mp4",
+    "https://i.imgur.com/mQKT2TV.mp4",
+    "https://i.imgur.com/mQKT2TV.mp4",
     "/cyber.mp4" // sometimes used as local filename
     // (original had many repeated zF5f2BD.jp and some other hosts)
   ];
