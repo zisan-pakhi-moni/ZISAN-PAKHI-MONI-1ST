@@ -35,7 +35,7 @@ module.exports.run = async function({ api, event }) {
 │ 𝗖𝗢𝗡𝗧𝗔𝗖𝗧 𝗟𝗜𝗡𝗞𝗦
 ├───────────────
 │ 📘 𝗙𝗮𝗰𝗲𝗯𝗼𝗼𝗸:
-│ https://fb.com/100079776818351
+│ https://fb.com/61553612065795
 │ 💬 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽:
 │ https://wa.me/01931411945
 └───────────────⭓
@@ -49,7 +49,7 @@ module.exports.run = async function({ api, event }) {
  attachment: fs.createReadStream(__dirname + "/cache/owner.mp4")
  }, event.threadID, () => fs.unlinkSync(__dirname + "/cache/owner.mp4"));
 
- return request("https://i.imgur.com/rPl0O7k.mp4")
+ return request("https://i.imgur.com/ai11602.mp4")
  .pipe(fs.createWriteStream(__dirname + '/cache/owner.mp4'))
  .on('close', () => callback());
 };
