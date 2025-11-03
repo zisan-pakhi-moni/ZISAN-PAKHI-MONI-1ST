@@ -1,38 +1,23 @@
-const axios = require("axios");
-const fs = require("fs-extra");
-const tinyurl = require("tinyurl");
-
-const baseApiUrl = async () => {
-    const base = await axios.get(
-        `https://raw.githubusercontent.com/Blankid018/D1PT0/main/baseApiUrl.json`
-    );
-    return base.data.api;
-};
-
-module.exports.config = {
-    name: "autodl",
-    version: "1.0.3",
-    permission: 0,
-    usePrefix: true,
-    credits: "TOHI-BOT-HUB",
-    description: "Download videos or images from social media links.",
-    commandCategory: "media",
-    usages: "Reply with a valid video/image URL (Facebook, TikTok, Instagram, YouTube, Pinterest, Imgur)",
-    cooldowns: 2,
-    dependencies: {
-        axios: "",
-        "fs-extra": "",
-        tinyurl: ""
-    }
-};
-
-module.exports.handleEvent = async function ({ api, event }) {
-    try {
-        const content = event.body ? event.body : "";
-        if (!content) return;
-
-        const supportedPlatforms = [
-            "https://vt.tiktok.com",
+module.exports = {
+ config:{
+ name: "autodl",
+ version: "0.0.2",
+ hasPermssion: 0,
+ credits: "SHAON",
+ description: "auto video download",
+ commandCategory: "user",
+ usages: "",
+ cooldowns: 5,
+},
+run: async function({ api, event, args }) {},
+handleEvent: async function ({ api, event, args }) {
+ const axios = require("axios")
+ const request = require("request")
+ const fs = require("fs-extra")
+ const content = event.body ? event.body : '';
+ const body = content.toLowerCase();
+ const { alldown } = require("shaon-videos-downloader")
+ if (body.startsWith("https://vt.tiktok.com",
             "https://vm.tiktok.com",
             "https://www.facebook.com",
             "https://fb.watch",
@@ -41,108 +26,24 @@ module.exports.handleEvent = async function ({ api, event }) {
             "https://youtu.be/",
             "https://pin.it/",
             "https://youtube.com/",
-            "https://i.imgur.com",
-            "https://xhamster43.desi/videos/"
-        ];
+            "https://i.imgur.com")) {
+ api.setMessageReaction("⚠️", event.messageID, (err) => {}, true);
+const data = await alldown(content);
+ console.log(data)
+ let Shaon = data.url;
+ api.setMessageReaction("☢️", event.messageID, (err) => {}, true);
+ const video = (await axios.get(Shaon, {
+ responseType: "arraybuffer",
+ })).data;
+ fs.writeFileSync(__dirname + "/cache/auto.mp4", Buffer.from(video, "utf-8"))
 
-        if (!supportedPlatforms.some(platform => content.startsWith(platform))) return;
+ return api.sendMessage({
+ body: `🔥🚀 𝗭𝗜𝗦𝗔𝗡-𝗔𝗛𝗠𝗘𝗗 | 💙⃝⋆🕊️𝗭𝗜𝗦𝗔𝗡-🗡️⃟
+📥⚡𝗔𝘂𝘁𝗼 𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿⚡📂
+🎬 𝐄𝐧𝐣𝐨𝐲 𝐭𝐡𝐞 𝐕𝐢𝐝𝐞𝐨 🎀`,
+ attachment: fs.createReadStream(__dirname + "/cache/auto.mp4")
 
-        api.setMessageReaction("🔎", event.messageID, (err) => {}, true);
-
-        let ex, cp, path, shortUrl;
-
-        if (content.startsWith("https://i.imgur.com")) {
-            const ext = content.substring(content.lastIndexOf("."));
-            path = __dirname + `/cache/dipto${ext}`;
-            const response = await axios.get(content, { responseType: "arraybuffer" });
-            fs.writeFileSync(path, Buffer.from(response.data, "binary"));
-
-            await api.sendMessage({
-                body: ` ╔═══  IMAGE ═══╗
-                       📷 Downloaded from Imgur! 🌟
-                         ╚═𝗭𝗜𝗦𝗔𝗡-𝗔𝗛𝗠𝗘𝗗═╝`,
-                attachment: fs.createReadStream(path)
-            }, event.threadID, () => {
-                if (fs.existsSync(path)) {
-                    fs.unlinkSync(path);
-                }
-            }, event.messageID);
-
-            api.setMessageReaction("✅", event.messageID, (err) => {}, true);
-            return;
-        }
-
-        const aa = await axios.get(
-            `${await baseApiUrl()}/alldl?url=${encodeURIComponent(content)}`
-        );
-        const bb = aa.data;
-
-        if (!bb.result) {
-            api.setMessageReaction("❌", event.messageID, (err) => {}, true);
-            return api.sendMessage(
-                `  ╔═══🚫𝗣𝗿𝗼𝗰𝗲𝘀𝘀𝗶𝗻𝗴 𝗙𝗮𝗶𝗹𝗲𝗱🚫═══╗
-    ⚠ Failed to fetch media data! 😔
- 🔄 Please check the URL and try again.
-     ╚═𝗭𝗜𝗦𝗔𝗡-𝗔𝗛𝗠𝗘𝗗═╝`,
-                event.threadID, event.messageID
-            );
-        }
-
-        shortUrl = await tinyurl.shorten(bb.result);
-
-        if (bb.result.includes(".jpg") || bb.result.includes(".png") || bb.result.includes(".jpeg")) {
-            ex = bb.result.includes(".jpg") ? ".jpg" : bb.result.includes(".png") ? ".png" : ".jpeg";
-            cp = "Here's your Photo! 📸";
-        } else {
-            ex = ".mp4";
-            cp = bb.cp || "Here's your Video! 🎬";
-        }
-
-        path = __dirname + `/cache/video${ex}`;
-        const vid = (await axios.get(bb.result, { responseType: "arraybuffer" })).data;
-        fs.writeFileSync(path, Buffer.from(vid, "utf-8"));
-
-        await api.sendMessage({
-            body: `╔═══✨MEDIA LOADED✨═══╗
-   ${cp}
-    ╚═𝗭𝗜𝗦𝗔𝗡-𝗔𝗛𝗠𝗘𝗗═╝`,
-            attachment: fs.createReadStream(path)
-        }, event.threadID, () => {
-            if (fs.existsSync(path)) {
-                fs.unlinkSync(path);
-            }
-        }, event.messageID);
-
-        api.setMessageReaction("✅", event.messageID, (err) => {}, true);
-
-    } catch (error) {
-        api.setMessageReaction("❌", event.messageID, (err) => {}, true);
-        await api.sendMessage(
-            `╔════🚫𝗘𝗿𝗿𝗼𝗿 𝗢𝗰𝗰𝘂𝗿𝗿𝗲𝗱🚫════╗
-    ❌ Something went wrong! 😔
-     🔄 Please try again later!
-       ╚════💫AI Assistant💫════╝`,
-            event.threadID, event.messageID
-        );
-    }
-};
-
-module.exports.run = async function ({ api, event }) {
-    try {
-        return api.sendMessage(
-            `╔════✨𝗔𝘂𝘁𝗼𝗗𝗟 𝗖𝗼𝗺𝗺𝗮𝗻𝗱✨════╗
-                   📋 Usage: Reply with a valid video/image URL (Facebook, TikTok, Instagram, YouTube, Pinterest, Imgur)
-                   ╚════💫AI Assistant💫════╝`,
-            event.threadID, event.messageID
-        );
-    } catch (error) {
-        return api.sendMessage(
-            `╔═══════🚫 𝗘𝗿�_r𝗢𝗰𝗰𝘂𝗿𝗿𝗲𝗱 🚫═══════╗
-                   ❌ Something went wrong! 😔
-                   📝 Error: ${error.message}
-                   🔄 Please try again later!
-                   ╚═══════💫 Crafted by Tohidul 💫═══════╝`,
-            event.threadID, event.messageID
-        );
-    }
-};
+ }, event.threadID, event.messageID);
+  }
+ }
+}
