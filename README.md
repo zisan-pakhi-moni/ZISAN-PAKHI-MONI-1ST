@@ -182,7 +182,78 @@ Please do not disturb the admin unless you have a special need. Thank you!
 - 🛡️ **PAKHI CHOWDHURY (LADY OWNER & CREATOR OF GREY HAT HACKERS TEAM)**
 - 🎓 **ZISAN AHMED (REMODULE THIS FORK)** 
 
+-👋 Hi, I'm Zisan Ahmed
+
+🚀 Aspiring Full‑Stack Developer | JavaScript & Bot Enthusiast
+🇧🇩 Bangladesh
+
+
 ---
+
+🧑‍💻 About Me
+
+🌱 Currently learning Full‑Stack Web Development
+
+🤖 Interested in Messenger Bots & Automation
+
+💡 Love building small projects to learn real‑world skills
+
+🎯 Goal: Become a professional software developer
+
+
+
+---
+
+🛠️ Skills
+
+Languages: JavaScript, HTML, CSS
+
+Backend: Node.js (Beginner)
+
+Tools: Git, GitHub, Termux
+
+Others: API Integration, Bot Logic
+
+
+
+---
+
+📂 Projects
+
+🤖 Messenger Bot
+
+A simple JavaScript‑based Messenger bot project for fun & learning.
+
+Auto replies
+
+Basic command handling
+
+Beginner friendly structure
+
+
+🔗 Repository: ZISAN-PAKHI-MONI-1ST
+
+
+---
+
+📈 GitHub Goals
+
+🔥 Upload projects regularly
+
+📚 Learn clean & secure coding
+
+🤝 Collaborate with other developers
+
+
+
+---
+
+📫 Contact
+
+💬 Facebook:https://www.facebook.com/ITS.ME.ZISAN.KING.OF.VIRTUAL.OKHAY.BEBZ
+
+🌐 GitHub: zisan-pakhi-moni
+-
 
 💖 **Thank You For Choosing 𝗭𝗜𝗦𝗔𝗡 𝗖𝗵𝗮𝘁 𝗕𝗼𝘁!**  
 🗓️ *Release Date:* `30/08/2025 at 02:00`  
