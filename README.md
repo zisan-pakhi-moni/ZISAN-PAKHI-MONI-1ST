@@ -142,7 +142,7 @@ ___
 **Location:** **`RAJSHAHI, BANGLADESH`**  
 
 ### 📞 **CONTACT INFORMATION**  
-- **WhatsApp:** **[01931411945](https://wa.me/+8801931411945)**  
+- **WhatsApp:** **[01951552554](https://wa.me/+8801951552554)**  
 - **Facebook:** **[Facebook ID](https://facebook.com/100004909394963)**  
 - **Messenger:** **[Message](https://m.me/100079776818351)**  
 
@@ -177,10 +177,10 @@ Please do not disturb the admin unless you have a special need. Thank you!
 
 ## ✨🌟 Special Thanks 🌟✨
 
-- 🚀 **SARPX Cyber Bot Team**  
-- 🧙‍♂️ **SIRAJ (Owner SARPX Cyber Bot Team & 𝗦𝗣𝗔𝗠𝗠𝗜𝗡𝗚🌐𝗔𝗡𝗗 𝗔𝗗𝗩𝗔𝗡𝗖𝗘𝗗🖥️𝗥𝗜𝗦𝗞 𝗣𝗥𝗢𝗧𝗘𝗖𝗧𝗜𝗢𝗡 🖥️𝗫𝗣𝗘𝗥𝗧𝗦)**
-- 🛡️ **ZISAN AHMED (Admin 𝗦𝗣𝗔𝗠𝗠𝗜𝗡𝗚🌐𝗔𝗡𝗗 𝗔𝗗𝗩𝗔𝗡𝗖𝗘𝗗🖥️𝗥𝗜𝗦𝗞 𝗣𝗥𝗢𝗧𝗘𝗖𝗧𝗜𝗢𝗡 🖥️𝗫𝗣𝗘𝗥𝗧𝗦)**
-- 🎓 **ZISAN AHMED (OWNER THIS FORK)** 
+- 🚀 **GREY HAT HACKERS TEAM**  
+- 🧙‍♂️ **ZISAN AHMED (OWNER & CREATOR OF GREY HAT HACKERS TEAM)**
+- 🛡️ **PAKHI CHOWDHURY (LADY OWNER & CREATOR OF GREY HAT HACKERS TEAM)**
+- 🎓 **ZISAN AHMED (REMODULE THIS FORK)** 
 
 ---
 
@@ -202,4 +202,4 @@ Please do not disturb the admin unless you have a special need. Thank you!
   <a href="https://youtube.com/@cyberbotcommunity"><img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="YouTube"></a>
 </p>
 
-**I hope you enjoy my fork! Thank you for supporting the cyber chat bot community!**
+**I hope you enjoy my fork! Thank you for supporting the GREY HAT HACKERS TEAM MASSENGER BOT!**
