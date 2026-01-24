@@ -1,19 +1,18 @@
 module.exports.config = {
   name: "reactremove",
-  version: "1.2.0",
-  hasPermission: 1, // admin only
+  version: "1.3.0",
+  hasPermission: 1,
   credits: "Zisan",
-  description: "নির্দিষ্ট react দিলে ৩ সেকেন্ড পর মেসেজ remove করবে",
+  description: "নির্দিষ্ট react দিলে ৩ সেকেন্ড পর মেসেজ remove",
   commandCategory: "admin",
   usages: "reactremove on/off",
   cooldowns: 0
 };
 
-// ON / OFF switch
-let isEnabled = true;
+let isEnabled = false;
 
-// যেসব react দিলে কাজ করবে
-const ALLOWED_REACTIONS = ["⚠️", "❌"]; // চাইলে পরিবর্তন করো
+// যেসব react দিলে remove হবে
+const ALLOWED_REACTIONS = ["⚠️", "❌"];
 
 module.exports.run = async function ({ api, event, args }) {
   const option = args[0];
@@ -29,35 +28,29 @@ module.exports.run = async function ({ api, event, args }) {
   isEnabled = option === "on";
 
   api.sendMessage(
-    `✅ React Remove ${isEnabled ? "চালু" : "বন্ধ"} করা হয়েছে\n⏱️ Delay: 3s\n🎯 React: ${ALLOWED_REACTIONS.join("⚠️")}`,
+    `✅ React Remove ${isEnabled ? "চালু" : "বন্ধ"}\n🎯 React: ${ALLOWED_REACTIONS.join("⚠️")}\n⏱️ Delay: 3s`,
     event.threadID,
     event.messageID
   );
 };
 
-// React listener
-module.exports.handleReaction = async function ({ api, event }) {
+// ⚠️ IMPORTANT: Mirai reaction register
+module.exports.handleReaction = async function ({ api, event, handleReaction }) {
   if (!isEnabled) return;
 
-  try {
-    const reaction = event.reaction;
+  // শুধু নির্দিষ্ট react
+  if (!ALLOWED_REACTIONS.includes(event.reaction)) return;
 
-    // শুধু নির্দিষ্ট react হলে
-    if (!ALLOWED_REACTIONS.includes(reaction)) return;
+  setTimeout(async () => {
+    try {
+      await api.unsendMessage(handleReaction.messageID);
+    } catch (e) {
+      console.log("Unsend error:", e);
+    }
+  }, 3000);
+};
 
-    const messageID = event.messageID;
-    if (!messageID) return;
-
-    // ৩ সেকেন্ড পর remove
-    setTimeout(async () => {
-      try {
-        await api.unsendMessage(messageID);
-      } catch (e) {
-        console.log("Unsend failed:", e);
-      }
-    }, 3000);
-
-  } catch (err) {
-    console.log("React remove error:", err);
-  }
+// 🔑 Mirai hook (এইটা না থাকলে কাজ করবে না)
+module.exports.onLoad = () => {
+  if (!global.client.handleReaction) global.client.handleReaction = [];
 };
