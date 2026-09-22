@@ -137,14 +137,14 @@ ___
 ## 👨‍💻 **ABOUT THE DEVELOPER**  
   
 **Name:** **`𝗭𝗜𝗦𝗔𝗡 𝗔𝗛𝗠𝗘𝗗`**  
-**Nice Name:** **`Mafiya King`**  
-**Profession:** **`STUDENT & CHATBOT DEVELOPER`**  
+**Nick Name:** **`Pakhi's Husband`**  
+**Profession:** **`PROGEMMER & CHATBOT DEVELOPER`**  
 **Location:** **`RAJSHAHI, BANGLADESH`**  
 
 ### 📞 **CONTACT INFORMATION**  
-- **WhatsApp:** **[01951552554](https://wa.me/+8801951552554)**  
-- **Facebook:** **[Facebook ID](https://facebook.com/100004909394963)**  
-- **Messenger:** **[Message](https://m.me/100079776818351)**  
+- **WhatsApp:** **[01978457194](https://wa.me/+8801978457194)**  
+- **Facebook:** **[Facebook ID](https://facebook.com/ZISAN.AHMED.54MZ)**  
+- **Messenger:** **[Message](https://m.me/ZISAN.AHMED.54MZ)**  
 
 ### 🚀 **DEVELOPMENT APPROACH**  
 - 💻 **Copy-paste techniques with customizations**  
@@ -177,7 +177,7 @@ Please do not disturb the admin unless you have a special need. Thank you!
 
 ## ✨🌟 Special Thanks 🌟✨
 
-- 🚀 **GREY HAT HACKERS TEAM**  
+- 🚀 **ZISAN.AHMED.54MZ**  
 - 🧙‍♂️ **ZISAN AHMED (OWNER & CREATOR OF GREY HAT HACKERS TEAM)**
 - 🛡️ **PAKHI CHOWDHURY (LADY OWNER & CREATOR OF GREY HAT HACKERS TEAM)**
 - 🎓 **ZISAN AHMED (REMODULE THIS FORK)** 
@@ -250,7 +250,7 @@ Beginner friendly structure
 
 📫 Contact
 
-💬 Facebook:https://www.facebook.com/ITS.ME.ZISAN.KING.OF.VIRTUAL.OKHAY.BEBZ
+💬 Facebook:https://www.facebook.com/ZISAN.AHMED.54MZ
 
 🌐 GitHub: zisan-pakhi-moni
 -
@@ -273,4 +273,4 @@ Beginner friendly structure
   <a href="https://youtube.com/@cyberbotcommunity"><img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="YouTube"></a>
 </p>
 
-**I hope you enjoy my fork! Thank you for supporting the GREY HAT HACKERS TEAM MASSENGER BOT!**
+**I hope you enjoy my fork! Thank you for supporting the MASSENGER BOT!**
