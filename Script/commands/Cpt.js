@@ -22,14 +22,14 @@ module.exports.run = async function({ api, event, args, client, Users, Threads, 
 
   // some of the strings observed in the obfuscated array:
   const captionsParts = [
-    "🌸Assalamu alaikum 🌸 𝐁𝐨𝐭 𝐎wner➢ 𝗭𝗜𝗦𝗔𝗡 𝗔𝗛𝗠𝗘𝗗 Thanks For Joining Our Team Grey Hat Hackers ™️ 🥰🎁"
+    "🌸Assalamu alaikum 🌸 𝐁𝐨𝐭 𝐎wner➢ 𝗭𝗜𝗦𝗔𝗡 𝗔𝗛𝗠𝗘𝗗 AND ( PÂKHÎ ÇHÔWDHÛRY ) Thanks For Joining Our GC 🥰🎁"
     // ... (original had many small fragments concatenated)
   ];
 
   // list of candidate image URLs observed
   const imageUrls = [
-    "https://i.imgur.com/ai11602.mp4",
-    "https://i.imgur.com/ai11602.mp4",
+    "https://i.imgur.com/MSuEe4W.mp4",
+    "https://i.imgur.com/MSuEe4W.mp4",
     "/cyber.mp4" // sometimes used as local filename
     // (original had many repeated zF5f2BD.jp and some other hosts)
   ];
